@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+
+    --text-font: 400 15px / 1.7em 'Lexend Deca', sans-serif;
+    --header-font: 700 200% / 1em 'Big Shoulders Display', cursive;
+
+    --sedans-icon: url('../images/icon-sedans.svg');
+    --suvs-icon: url('../images/icon-suvs.svg');
+    --luxury-icon: url('../images/icon-luxury.svg');
+    --icon-position: 50px 50px;
+
+    --border-radius: 8px;
+    --section-padding: 130px 50px 50px;
+
+    --button-border-width: 2px;
+    --button-padding: 15px 30px;
+    --button-border-radius: 25px;
+
+    --header-margin-bottom: 30px;
+    --text-margin-bottom: 25px;
+
+    /* responsive */
+    --component-width-mobile: 330px;
+    --component-width-desktop: 920px;
+    --component-height-desktop: 500px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--very-light-gray);
+}
+
+.preview-card {
+    margin: 0 auto;
+    justify-self: center;
+    box-sizing: border-box;
+    max-width: var(--component-width-mobile);
+    -webkit-border-radius: var(--border-radius);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    font: var(--text-font);
+    color: var(--transparent-white);
+
+}
+.preview-card .sedans {
+    background: var(--bright-orange) var(--sedans-icon) no-repeat var(--icon-position);
+}
+.preview-card .suvs {
+    background: var(--dark-cyan) var(--suvs-icon) no-repeat var(--icon-position);
+}
+.preview-card .luxury {
+    background: var(--very-dark-cyan) var(--luxury-icon) no-repeat var(--icon-position);
+}
+.preview-card section {
+    padding: var(--section-padding);
+}
+.preview-card .header {
+    font: var(--header-font);
+    color: var(--very-light-gray);
+    text-transform: uppercase;
+    margin: 0 0 var(--header-margin-bottom) 0;
+}
+.preview-card .text {
+    margin-bottom: var(--text-margin-bottom);
+}
+.preview-card .sedans .button { color: var(--bright-orange); }
+.preview-card .suvs .button { color: var(--dark-cyan); }
+.preview-card .luxury .button { color: var(--very-dark-cyan); }
+.preview-card .button {
+    line-height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: var(--very-light-gray);
+    border: var(--button-border-width) solid var(--very-light-gray);
+    padding: var(--button-padding);
+    -webkit-border-radius: var(--button-border-radius);
+    border-radius: var(--button-border-radius);
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+.preview-card .button:hover {
+    background-color: transparent;
+    color: var(--very-light-gray);
+}
+
+/* For desktop */
+@media screen and (min-width: 992px) {
+    .preview-card {
+        max-width: var(--component-width-desktop);
+        min-height: var(--component-height-desktop);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .preview-card section { 
+        display: grid; 
+        grid-template-rows: min-content auto min-content; 
+    }
+    .preview-card .button { 
+        justify-self: start; 
+        align-self: end;
+    }
+}
