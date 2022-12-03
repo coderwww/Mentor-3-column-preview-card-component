@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/Screenshot-3-column-preview-card-component-desktop-v2.png)
-![](./design/Screenshot-3-column-preview-card-component-mobile.png)
+![](./screenshots/screenshot-desktop.png)
+![](./screenshots/screenshot-mobile.png)
 
 ### Links
 
